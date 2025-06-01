@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include('../partials/head') %>
+    <title>Creación de Productos</title>
+</head>
+<body>
+    <%-include('../partials/header')%>
+    <main>
+        <h1>Creación de Productos</h1>
+        <form action="/create" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="titulo">Titulo: </label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+            <div>
+                <label for="editorial">Editorial: </label>
+                <input type="text" id="editorial" name="editorial" required>
+            </div>
+            <div>
+                <label for="precio">Precio: </label>
+                <input type="number" id="precio" name="precio" required>
+            </div>
+            <div class="imagen-container-create">
+                <label for="imagen">Imagen: </label>
+                <input type="file" id="imagen" name="imagen">
+                <div id="imagenPreviaCrear"></div>
+
+            </div>
+            <div>
+                <label for="stock">Stock: </label>
+                <input type="number" id="stock" name="stock" min="0" value="1" required>
+            </div>
+            <div class="botones">
+            <button type="submit" class="btn-crear">Crear Producto</button>
+            <a href="/" class="btn-cancelar">Cancelar</a>
+            </div>
+
+        </form>
+    </main>
+    <%-include('../partials/footer')%>
+    <script src="/scriptCreate.js"></script>
+</body>
+</html>

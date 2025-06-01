@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include('../partials/head') %>
+    <title>Eliminar producto</title>
+</head>
+<body>
+    <%-include('../partials/header')%>
+    <main>
+        <h1>Eliminar Producto</h1>
+        <p class="mensaje-eliminar">¿Estás seguro de que deseas eliminar el producto
+             <%= producto.titulo %> <%= producto.editorial %>?</p>
+                <img src="/images/<%= producto.imagen %>" alt="Imagen de <%= producto.titulo %>" class="imagen-eliminar">
+        <div class="botones">
+            <form action="/delete/<%= producto.id %>" method="POST">
+                <button type="submit" class="btn-eliminar">Eliminar</button>
+            </form>
+                <a href="/" class="btn-cancelar">Cancelar</a>
+        </div>
+    </main>
+    <%-include('../partials/footer')%>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ <%- include('partials/head') %>
+<title>Mundo Manga</title>
+  </head>
+ <body>
+  <%-include('partials/header')%>
+
+  <main class="container text-center mt-5">
+    <h1>¡Bienvenido a Mundo Manga!</h1>
+    <p>Tu tienda online de mangas, cómics y cultura japonesa.</p>
+    <img src="/images/LogotipoMundoManga.jpeg" alt="Logo" width="200" style="border-radius: 10%;">
+  </main>
+
+    <div class="grid">
+      <% productos.forEach((producto, i) => { 
+        let clase = '';
+        if ([0, 8].includes(i)) clase = 'card-grande'; // 3 columnas
+        else if ([1, 3, 4, 5, 7, 9, 10, 11].includes(i)) clase = 'card-mediana'; // 2 columnas
+        // el resto serán pequeñas (1 columna)
+      %>
+        <div class="card <%= clase %>">
+          <img src="/images/<%= producto.imagen %>" alt="Imagen de <%= producto.titulo %>">
+          <div class="info">
+            <h3>Titulo: <%= producto.titulo %></h3>
+            <h3>Editorial: <%= producto.editorial %></h3>
+            <p>Precio: $<%= producto.precio %></p>
+            <div class="botones">
+                <a href="/edit/<%=producto.id%>" class="btn-actualizar btn-small" title="Editar"><i class="fas fa-edit"></i></a>
+                <a href="/delete/<%=producto.id%>?_method=DELETE" class="btn-eliminar btn-small" title="Eliminar"><i class="fas fa-trash"></i></a>
+                <form action="/carrito/agregar/<%= producto.id %>" method="POST" style="display:inline;">
+                  <button type="submit" class="icon-btn" title="Agregar al carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </form>
+                <a href="/carrito/agregar/<%= producto.id %>?comprar=1" class="icon-btn" title="Comprar">
+                  <i class="fas fa-credit-card"></i>
+                </a>
+                <button class="icon-btn" title="Compartir"
+                  onclick="navigator.share ? navigator.share({title: 'Mirá este manga', url: window.location.origin + '/#producto-<%= producto.id %>'}) : copiarLink('<%= producto.id %>')">
+                  <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <div class="paginacion">
+      <% if (totalPages > 1) { %>
+        <% for(let i = 1; i <= totalPages; i++) { %>
+          <% if (i === page) { %>
+            <span class="pagina-actual"><%= i %></span>
+          <% } else { %>
+            <a href="/?page=<%= i %>" class="pagina-link"><%= i %></a>
+          <% } %>
+        <% } %>
+      <% } %>
+    </div>
+    <div class="botones">
+        <a href="/create" class="btn-crear btn-small">Crear un titulo</a>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/scriptCompartir.js"></script>
+</body>
+<footer>
+<%- include('partials/footer') %>
+</footer>
+
+</html>

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="/images/LogotipoMundoManga.jpeg" alt="Logo" width="100" class="d-inline-block align-text-top" style="border-radius: 10%;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">
+            <i class="fas fa-home"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/mangas">
+            <i class="fas fa-book"></i> Mangas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">
+            <i class="fas fa-envelope"></i> Contactanos
+          </a>
+        </li>
+      </ul>
+      <!-- Agrupa los botones de la derecha -->
+      <div class="d-flex align-items-center gap-2 ms-auto flex-wrap">
+        <form class="d-flex" role="search" action="/" method="get">
+          <input class="form-control me-2" type="search" name="q" placeholder="Buscar" aria-label="Buscar" value="<%= typeof q !== 'undefined' ? q : '' %>">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+<% if (typeof error !== 'undefined') { %>
+  <div class="alert alert-danger"><%= error %></div>
+<% } %>
+<% if (typeof success !== 'undefined') { %>
+  <div class="alert alert-success"><%= success %></div>
+<% } %>
+<%- typeof content !== 'undefined' ? content : '' %>

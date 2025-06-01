@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "titulo": "Slam Dunk 01",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "1747535896263-1747514333929-SlamDunk_01.webp"
+  },
+  {
+    "id": 2,
+    "titulo": "Slam Dunk 02",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "1747516826220-SlamDunk_02.webp"
+  },
+  {
+    "id": 3,
+    "titulo": "Slam Dunk 03",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_03.webp"
+  },
+  {
+    "id": 4,
+    "titulo": "Slam Dunk 04",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "1747536259812-1747536233555-SlamDunk_04.webp"
+  },
+  {
+    "id": 5,
+    "titulo": "Slam Dunk 05",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_05.webp"
+  },
+  {
+    "id": 6,
+    "titulo": "Slam Dunk 06",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_06.webp"
+  },
+  {
+    "id": 7,
+    "titulo": "Slam Dunk 07",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_07.webp"
+  },
+  {
+    "id": 8,
+    "titulo": "Slam Dunk 08",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_08.webp"
+  },
+  {
+    "id": 9,
+    "titulo": "Slam Dunk 09",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_09.webp"
+  },
+  {
+    "id": 10,
+    "titulo": "Slam Dunk 10",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_10.webp"
+  },
+  {
+    "id": 11,
+    "titulo": "Slam Dunk 11",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_11.webp"
+  },
+  {
+    "id": 12,
+    "titulo": "Slam Dunk 12",
+    "editorial": "IVREA",
+    "precio": 12500,
+    "imagen": "SlamDunk_12.webp"
+  },
+  {
+    "id": 13,
+    "titulo": "Attack On Titan 01",
+    "editorial": "Ovni Press",
+    "precio": "8000",
+    "imagen": "1747547973538-AttackOnTitan_01.webp"
+  },
+  {
+    "id": 14,
+    "titulo": "Blue Lock 01",
+    "editorial": "IVREA",
+    "precio": "7500",
+    "imagen": "1747548918627-BlueLock_01.webp"
+  },
+  {
+    "id": 15,
+    "titulo": "Captain Tsubasa 01",
+    "editorial": "IVREA",
+    "precio": "13900",
+    "imagen": "1747548174356-CaptainTsubasa_01.webp"
+  },
+  {
+    "id": 16,
+    "titulo": "Chainsaw Man 01",
+    "editorial": "IVREA",
+    "precio": "7500",
+    "imagen": "1747548495374-chainsawMan_01.webp"
+  },
+  {
+    "id": 17,
+    "titulo": "Death Note 01",
+    "editorial": "IVREA",
+    "precio": "8000",
+    "imagen": "1748753962337-DeathNote_01.webp",
+    "stock": 10
+  }
+]
