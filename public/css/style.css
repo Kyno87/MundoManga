@@ -4,7 +4,7 @@ body {
   font-family: Arial, sans-serif;
   min-height: 100%;
 }
-
+/* FUENTES ESTILISADAS */
 .honk-BvMM {
   font-size: 4rem;
   font-family: "Honk", system-ui;
@@ -18,15 +18,15 @@ body {
 .honk-small {
   font-size: 2rem; /* O el tamaño que prefieras */
 }
-li {
-  list-style-type: none;
-}
-
 .press-start-2p-regular {
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
 }
+li {
+  list-style-type: none;
+}
+
 /* ====== GRID Y CARDS ====== */
 .grid {
   display: grid;
@@ -228,12 +228,12 @@ footer {
   font-size: 1.3rem;  /* Más grande el texto base */
 }
 footer h5 {
-  color: #1c03fa;
+  color: #fff;
   font-weight: bold;
   font-size: 2.2rem; /* Más grande el título */
 }
 footer a, footer small {
-  color: #1c03fa;
+  color: #fff;
   font-size: 1.2rem; /* Más grande los enlaces y textos pequeños */
 }
 footer a:hover {
@@ -244,14 +244,108 @@ footer i {
   margin: 0 0.5rem;
   vertical-align: middle;
 }
-.list-unstyled {
-    display: flex;
-    padding-left: 30% !important;
-    list-style: none;
-    flex-direction: column;
-    align-items: flex-start;
+
+/* Modal fondo negro, sin bordes redondeados */
+.modal-estilo-negro {
+  background: #181818 !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0 #000;
 }
-/* ====== NAVBAR ====== */
+.modal-estilo-negro .modal-header,
+.modal-estilo-negro .modal-footer {
+  background: #181818 !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  border: none;
+}
+.modal-estilo-negro .modal-title {
+  color: #fff !important;
+  font-weight: bold;
+}
+.modal-estilo-negro .form-label {
+  color: #fff !important;
+}
+.modal-estilo-negro .form-control {
+  background: #fff !important;
+  color: #000 !important;
+  border-radius: 0 !important;
+  border: 2px solid #000;
+}
+.btn.sin-bordes, .btn.sin-bordes:focus, .btn.sin-bordes:active {
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0 #000;
+}
+.btn-primary.sin-bordes, .btn-secondary.sin-bordes {
+  background: #fff !important;
+  color: #000 !important;
+  border: 2px solid #000 !important;
+}
+.btn-primary.sin-bordes:hover, .btn-secondary.sin-bordes:hover {
+  background: #000 !important;
+  color: #fff !important;
+}
+.btn-close-white {
+  filter: invert(1);
+}
+/* MENSAJE DE AGRADECIMIENTO */
+.agradecimiento-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+.agradecimiento-texto {
+  width: 50%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+  text-align: right;
+}
+.agradecimiento-img {
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.agradecimiento-img img {
+  max-width: 220px !important;
+  width: 100% !important;
+  height: auto !important;
+  min-width: 80px !important;
+  max-height: 120px! important;
+  display: block;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .agradecimiento-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .agradecimiento-texto,
+  .agradecimiento-img {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+  }
+  .agradecimiento-img img {
+    max-width: 160px;
+    min-width: 80px;
+  }
+}
+.list-unstyled {
+    align-items: center !important;
+    padding-left: 0 !important;
+  }
+  .list-unstyled li {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
+  }/* ====== NAVBAR ====== */
 .navbar {
   margin: 3% 3%;
   border: 5px ridge #1c03fa;
@@ -303,6 +397,15 @@ footer i {
     flex-direction: column !important;
     justify-content: flex-start !important;
     height: auto !important;
+  }
+  .list-unstyled {
+    align-items: center !important;
+    padding-left: 0 !important;
+  }
+  .list-unstyled li {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
   }
 }
 

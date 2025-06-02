@@ -3,8 +3,9 @@
     "id": 1,
     "titulo": "Slam Dunk 01",
     "editorial": "IVREA",
-    "precio": 12500,
-    "imagen": "1747535896263-1747514333929-SlamDunk_01.webp"
+    "precio": "12500",
+    "imagen": "1748897957903-SlamDunk_01.webp",
+    "stock": 2
   },
   {
     "id": 2,

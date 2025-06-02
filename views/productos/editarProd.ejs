@@ -23,10 +23,10 @@
             </div>
             <div class="imagen-container-edit">
                 <input type="file" id="imagen" name="imagen">
-                <label for="imagen">imagen actual:</label>
+                <input type="hidden" name="imagenActual" value="<%= producto.imagen %>">
+                <label for="imagen">Imagen actual:</label>
                 <br>
-        <img src="/images/<%= producto.imagen %>" alt="<%= producto.nombre %>" class="producto-image-small" id="preview-img">
-
+                <img src="/images/<%= producto.imagen %>" alt="<%= producto.nombre %>" class="producto-image-small" id="preview-img">
             </div>
             <div>
                 <label for="stock">Stock: </label>

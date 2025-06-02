@@ -97,9 +97,12 @@ const productosController = {
 
     // Actualizar producto
     update: (req, res) => {
+        console.log('BODY:', req.body);
+        console.log('FILE:', req.file);
         const id = req.params.id;
-        const { titulo, editorial, precio, stock } = req.body;
-        const imagen = req.file ? req.file.filename : null;
+        const { titulo, editorial, precio, stock, imagenActual } = req.body;
+        // Si hay archivo nuevo, usarlo; si no, usar la imagen anterior
+        const imagen = req.file ? req.file.filename : imagenActual;
         const productoIndex = productos.findIndex(prod => prod.id == id);
 
         if (productoIndex !== -1) {

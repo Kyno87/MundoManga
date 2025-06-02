@@ -1,13 +1,13 @@
 <footer class="bg-dark text-white mt-5 py-4" id="footer">
   <div class="container-footer">
-    <div class="row align-items-center">
+    <div class="row align-items-flex-start">
       <!-- Navegación -->
       <div class="col-md-4 mb-3 mb-md-0">
         <h5>Enlaces</h5>
         <ul class="list-unstyled">
           <li><a href="/" class="text-white text-decoration-none"><i class="fas fa-home"></i> Inicio</a></li>
           <li><a href="/mangas" class="text-white text-decoration-none"><i class="fas fa-book"></i> Mangas</a></li>
-          <li><a href="#footer" class="text-white text-decoration-none"><i class="fas fa-envelope"></i> Contacto</a></li>
+          <li><a href="#footer" class="text-white text-decoration-none abrir-modal-contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         </ul>
       </div>
       <!-- Redes sociales -->
@@ -16,7 +16,7 @@
         <a href="https://facebook.com/" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
         <a href="https://instagram.com/" target="_blank" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
         <a href="https://twitter.com/" target="_blank" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
-        <a href="mailto:info@mundomanga.com" class="text-white"><i class="fas fa-envelope fa-lg"></i></a>
+        <a href="#" class="text-white abrir-modal-contacto"><i class="fas fa-envelope fa-lg"></i></a>
       </div>
       <!-- Legales -->
       <div class="col-md-4 text-md-end text-center">
@@ -26,7 +26,50 @@
       </div>
     </div>
   </div>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script src="/js/footer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modal de contacto -->
+  <div class="modal fade" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-estilo-negro">
+        <form>
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="contactoModalLabel">Contacto</h5>
+            <button type="button" class="btn-close btn-close-white sin-bordes" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control sin-bordes" id="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control sin-bordes" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea class="form-control sin-bordes" id="mensaje" rows="3" required></textarea>
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-secondary sin-bordes" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary sin-bordes">Enviar</button>
+          </div>
+          <div id="mensaje-enviado" style="display:none;">
+            <div class="agradecimiento-row">
+              <div class="agradecimiento-texto">
+                <p>Tu mensaje fue enviado, agradecemos de Mundo Manga tu mensaje, continuamos trabajando para mejorar tu experiencia como usuario.</p>
+              </div>
+              <div class="agradecimiento-img">
+                <img src="/images/goku-asaludando.jpg" alt="Goku saludando">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="/contacto-modal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </footer>
