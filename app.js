@@ -39,6 +39,10 @@ app.use((req, res, next) => {
 // Rutas principales de la aplicación
 app.use('/', routerProducto);      // Productos y home
 
+app.get('/mangas', (req, res) => {
+  res.render('manga'); // Renderiza la vista de mangas
+});
+
 // Levanta el servidor en el puerto 3000
 app.listen(3000, () => {
   console.log('Servidor corriendo en el puerto 3000');

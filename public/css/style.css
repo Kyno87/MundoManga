@@ -1,51 +1,78 @@
 body {
-      margin: 0;
-      background-color: #ccc;
-      font-family: Arial, sans-serif;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: 350px;
-      gap: 10px;
-      padding: 20px;
-    }
-    .card {
-      background-color: #fff;
-      border: 4px solid #000;
-      border-radius: 0 !important;
-      box-shadow: 4px 4px 0 #000;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: mangaEntry 0.6s ease-out;
-    }
-    .card:hover {
-      transform: scale(1.03) rotate(-1deg);
-      box-shadow: 6px 6px 0 #000;
-    }
-    .card img {
-      width: auto;
-      max-height: 300px; /* Limita la altura de la imagen para que no desborde */
-      object-fit:contain;
-      margin-bottom: 1px;
-    }
-    .card h3 {
-      font-size: 1rem;
-      margin: 0;
-    }
-    .card p {
-      margin: 5px 0 0;
-      font-size: 0.9rem;
-    }
-    .card .botones {
-  margin-top: auto; /* Empuja los botones al final de la tarjeta */
+  margin: 0;
+  background-color: #ccc;
+  font-family: Arial, sans-serif;
+  min-height: 100%;
+}
+
+.honk-BvMM {
+  font-size: 4rem;
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 16,
+    "SHLN" 80.4;
+}
+.honk-small {
+  font-size: 2rem; /* O el tamaño que prefieras */
+}
+li {
+  list-style-type: none;
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+/* ====== GRID Y CARDS ====== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 350px;
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #000;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: mangaEntry 0.6s;
+  overflow: hidden;
+}
+.card:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 6px 6px 0 #000;
+}
+.card img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  margin-bottom: 1px;
+}
+.card h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+.card p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+}
+.card .botones {
+  margin-top: auto;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
+
 /* Icon buttons para acciones en tarjetas */
 .icon-btn {
   background: none;
@@ -57,8 +84,6 @@ body {
   transition: color 0.2s;
   padding: 4px 8px;
   border-radius: 50%;
-  box-shadow: none;
-  outline: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +92,8 @@ body {
   color: #fff;
   background: #1c03fa;
 }
-/* Tarjetas grandes y medianas en dos columnas */
+
+/* Tarjetas grandes y medianas */
 .card-grande,
 .card-mediana {
   display: grid !important;
@@ -77,7 +103,6 @@ body {
   padding: 10px;
   gap: 10px;
 }
-
 .card-grande img,
 .card-mediana img {
   width: 100%;
@@ -85,7 +110,6 @@ body {
   object-fit: contain;
   margin-bottom: 0;
 }
-
 .card-grande .info,
 .card-mediana .info {
   display: flex;
@@ -93,160 +117,188 @@ body {
   justify-content: center;
   height: 100%;
 }
-
 .card-grande .botones,
 .card-mediana .botones {
   margin-top: 20px;
 }
-
-/* Tarjetas pequeñas siguen igual */
+/* Tarjetas pequeñas */
 .card:not(.card-grande):not(.card-mediana) img {
   width: 100%;
   max-height: 220px;
   object-fit: contain;
   margin-bottom: 10px;
 }
-    /* Manga-style layout */
-    .card:nth-child(1) {
-      grid-column: span 3;
-    }
-    .card:nth-child(2) {
-      grid-column: span 2;
-    }
-    .card:nth-child(3) {
-      grid-column: span 1;
-    }
-    .card:nth-child(4) {
-      grid-column: span 2;
-    }
-    .card:nth-child(5) {
-      grid-column: span 2;
-    }
-    .card:nth-child(6) {
-      grid-column: span 2;
-    }
-    .card:nth-child(7) {
-      grid-column: span 1;
-    }
-    .card:nth-child(8) {
-      grid-column: span 2;
-    }
-    .card:nth-child(9) {
-      grid-column: span 3;
-    }
-    .card:nth-child(10) {
-      grid-column: span 2;
-    }
-    .card:nth-child(11) {
-      grid-column: span 2;
-    }
-    .card:nth-child(12) {
-      grid-column: span 2;
-    }
-     @keyframes mangaEntry {
-      0% {
-        opacity: 0;
-        transform: scale(0.9) rotate(2deg);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) rotate(0);
-      }
-    }
+.container-crear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 10px 20px;
+  color: #050505;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  font-weight: bold;
+}
+.btn-crear {
+  background: #39393a;
+  color: #fff;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  padding: 1rem 1rem; /* Más padding */
+    margin-top: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-cancelar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fa0303;
+  color: #fff;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  padding: 0.5rem 0.5rem; /* Más padding */
+    margin-top: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
+/* TARJETAS MANGA ESTILO */
+
+.card-img-top {
+  display: block;
+  width: 90%;
+  max-width: 90%;
+  margin: auto;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  max-height: none !important; /* Permitir altura completa */
+}
+
+/* Manga-style layout */
+.card:nth-child(1) { grid-column: span 3; }
+.card:nth-child(2) { grid-column: span 2; }
+.card:nth-child(3) { grid-column: span 1; }
+.card:nth-child(4) { grid-column: span 2; }
+.card:nth-child(5) { grid-column: span 2; }
+.card:nth-child(6) { grid-column: span 2; }
+.card:nth-child(7) { grid-column: span 1; }
+.card:nth-child(8) { grid-column: span 2; }
+.card:nth-child(9) { grid-column: span 3; }
+.card:nth-child(10) { grid-column: span 2; }
+.card:nth-child(11) { grid-column: span 2; }
+.card:nth-child(12) { grid-column: span 2; }
+
+@keyframes mangaEntry {
+  0% { opacity: 0; transform: scale(0.9) rotate(2deg);}
+  100% { opacity: 1; transform: scale(1) rotate(0);}
+}
+
+/* ====== PAGINACIÓN ====== */
 .paginacion {
-      margin: 20px 0;
-      text-align: center;
-    }
-.pagina-link, .pagina-actual {
-      display: inline-block;
-      margin: 0 5px;
-      padding: 6px 12px;
-      border-radius: 4px;
-      text-decoration: none;
-      color: #000;
-      border: 1px solid #ccc;
-    }
-.pagina-actual {
-      background: #000;
-      color: #fff;
-      border: 1px solid #000;
-    }
-/* ------------------------------------------- */
-footer {
-  background-color: #1e1e1e;
-  color: #ffffff;
+  margin: 20px 0;
   text-align: center;
-  padding: 1rem;
+}
+.pagina-link, .pagina-actual {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #ccc;
+}
+.pagina-actual {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background: #fff;
+  color: #1c03fa;
+  border: 4px solid #000;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #000;
+  text-align: center;
+  padding: 2rem 1rem; /* Más padding */
   margin-top: 2rem;
-  font-size: 0.9rem;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.3rem;  /* Más grande el texto base */
 }
-
-footer p {
-  margin: 0;
+footer h5 {
+  color: #1c03fa;
+  font-weight: bold;
+  font-size: 2.2rem; /* Más grande el título */
 }
-
-
-/* ----------------------------------------- */
+footer a, footer small {
+  color: #1c03fa;
+  font-size: 1.2rem; /* Más grande los enlaces y textos pequeños */
+}
+footer a:hover {
+  color: #000;
+}
+footer i {
+  font-size: 2rem; /* Más grande los iconos de redes */
+  margin: 0 0.5rem;
+  vertical-align: middle;
+}
+.list-unstyled {
+    display: flex;
+    padding-left: 30% !important;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+}
+/* ====== NAVBAR ====== */
 .navbar {
-  margin: 3% 3%; /* Espacio superior e inferior */
-  border: 5px ridge #1c03fa; /* Borde azul */
-  border-radius: 1rem; /* Bordes redondeados */
-  box-shadow: 0 4px 40px rgb(46, 2, 241); /* Sombra */
-  background-color: #1c1c1c; /* Fondo oscuro personalizado */
-  color: #ffffff; /* Texto blanco */
+  margin: 3% 3%;
+  border: 5px ridge #1c03fa;
+  border-radius: 1rem;
+  box-shadow: 0 4px 40px rgb(46, 2, 241);
+  background: #1c1c1c;
+  color: #fff;
 }
-
 .navbar .nav-link {
-  color: #ffffff; /* Color de los enlaces */
-  transition: color 0.3s ease;
+  color: #fff;
+  transition: color 0.3s;
 }
-
 .navbar .nav-link:hover {
-  color: #007bff; /* Color azul al pasar el mouse */
+  color: #007bff;
 }
-
 .navbar .btn-outline-primary {
-  border-color: #007bff; /* Color del borde */
-  color: #ffffff; /* Texto blanco */
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin-bottom: 2%; /* Espacio inferior */
+  border-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+  margin-bottom: 2%;
 }
-
 .navbar .btn-outline-primary:hover {
-  background-color: #007bff; /* Fondo azul al pasar el mouse */
-  color: #ffffff; /* Texto blanco */
+  background: #007bff;
+  color: #fff;
 }
 
+/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   .grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: auto;
-      }
-      .card {
-        grid-column: span 1 !important;
-      }  
-  .card,
-  .card-grande,
-  .card-mediana {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+  .card {
+    grid-column: span 1 !important;
     display: flex !important;
     flex-direction: column !important;
     min-height: unset !important;
     padding: 10px !important;
     gap: 0 !important;
   }
-  .card img,
-  .card-grande img,
-  .card-mediana img {
+  .card img {
     width: 100% !important;
     max-height: 220px !important;
     object-fit: contain !important;
     margin-bottom: 10px !important;
   }
-  .card .info,
-  .card-grande .info,
-  .card-mediana .info {
+  .card .info {
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
@@ -254,27 +306,24 @@ footer p {
   }
 }
 
-/* ====== ESTILOS GENERALES PARA TODAS LAS VISTAS ====== */
+/* ====== ESTILOS GENERALES ====== */
 main, .container, .content, form, table, h1, h2, h3, h4, h5, h6, p, .alert {
   font-family: Arial, sans-serif;
 }
-
 .container, main, .content {
   background: #fff;
   border: 2px solid #000;
   box-shadow: 4px 4px 0 #000;
   border-radius: 0;
-  margin: 30px auto 30px auto;
+  margin: 30px auto;
   padding: 30px 20px;
   max-width: 700px;
 }
-
 h1, h2, h3 {
   color: #1c03fa;
   font-weight: bold;
   margin-bottom: 20px;
 }
-
 form input, form button, form select {
   margin-bottom: 15px;
   padding: 8px 10px;
@@ -283,7 +332,6 @@ form input, form button, form select {
   width: 100%;
   font-size: 1rem;
 }
-
 form button, .btn {
   background: #1c03fa;
   color: #fff;
@@ -297,7 +345,6 @@ form button:hover, .btn:hover {
   background: #000;
   color: #fff;
 }
-
 .alert {
   border: 2px solid #ff5252;
   background: #ffeaea;
@@ -305,7 +352,6 @@ form button:hover, .btn:hover {
   padding: 10px;
   margin-bottom: 20px;
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -324,22 +370,16 @@ table tr:nth-child(even) {
   background: #f3f3f3;
 }
 
-/* -----estilo pagina edit----- */
-
+/* ====== ESTILO PAGINA EDIT ====== */
 .imagen-container-edit label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
   display: flex;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: center;
+  margin: 0 auto 10px auto;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
 }
 .imagen-container-edit img, .imagen-container-create img {
   display: flex;
   justify-content: center;
   margin: auto;
 }
-
-
-/* ====== FIN ESTILOS GENERALES ====== */

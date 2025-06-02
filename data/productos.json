@@ -88,7 +88,8 @@
     "titulo": "Attack On Titan 01",
     "editorial": "Ovni Press",
     "precio": "8000",
-    "imagen": "1747547973538-AttackOnTitan_01.webp"
+    "imagen": "1748824286143-AttackOnTitan_01.webp",
+    "stock": 1
   },
   {
     "id": 14,
@@ -118,5 +119,13 @@
     "precio": "8000",
     "imagen": "1748753962337-DeathNote_01.webp",
     "stock": 10
+  },
+  {
+    "id": 18,
+    "titulo": "Death Note 02",
+    "editorial": "IVREA",
+    "precio": "8000",
+    "imagen": "1748823696947-DeathNote_02.webp",
+    "stock": 1
   }
 ]
